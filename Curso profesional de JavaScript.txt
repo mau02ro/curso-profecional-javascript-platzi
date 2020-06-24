@@ -55,3 +55,19 @@ No se puede asugnar un valos a this directamente y este depende de en que scope 
 estamos en 'stric mode' que nos regresa undefined.
 *Cuando llamamos a this desde una funcion que esta contenida en un objeto, this hace referencia a ese objeto.
 *Cuando llamamos a this desde una 'clase', se hace referencia a la instancia generada por el constructor.
+
+
+--- Los metodos call, apply y bind
+
+Estan funciones nos sirven para establecer el valor de this, es decir cambiar el valor que se va a usar cuando la funcion
+sea llamada.
+
+Las funciones call,apply y bind son parte del prototipo Function. Toda funcion usa este prototipo y por lo Tanto
+tiene estas tres funciones:
+
+*functionName.call().Ejecuta la funcion recibiendo como primer argumento el this y los siguientes son los argumentos
+que recibe la funcion que llamo call.
+*functionName.apply().Ejecuta la funcion recibiendo como primer argumento el this y como segundo un arreglo con los
+argumentos que recibe la funcion que llamo a apply.
+*functionName.bind().Recibe como primer y unico argumento el this.No ejecuta la funcion, solo regresa otra
+funcioncon el nuevo this integrado.
