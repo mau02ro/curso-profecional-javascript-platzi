@@ -43,3 +43,15 @@ declaradas fuera del scope.
 Los Closures nos sirven para tener algo parecido a variables privadas, caracteristica que no tiene JavaScript
 por default.Es decir ancpsulan variables que no pueden ser modificadas directamente por otros ojetos, solo por funciones
 pertenecientes al mismo.
+
+
+---This
+
+this se refiere a un objeto, ese objeto es el que actualmente esta ejecutando un pedazo de codig.
+
+No se puede asugnar un valos a this directamente y este depende de en que scope nos encontremos.
+
+*Cuando llamamos a this en el Global Scope o Function Scope, s ehace referencia  al objeto window, a excepcion de cuando
+estamos en 'stric mode' que nos regresa undefined.
+*Cuando llamamos a this desde una funcion que esta contenida en un objeto, this hace referencia a ese objeto.
+*Cuando llamamos a this desde una 'clase', se hace referencia a la instancia generada por el constructor.
