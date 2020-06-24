@@ -33,3 +33,13 @@ o for.se utiliza let y const para declarar este tipo de variables.
 
 Module Scope: cuando se denota un script de un tipo module con el atributo type='mosule' las variables son
 limitadas al archivo en el que estan declaradas.
+
+
+---Closures
+
+Son funciones que regresan una funcion o un objeto con funciones que mantienen las variables que fueron
+declaradas fuera del scope.
+
+Los Closures nos sirven para tener algo parecido a variables privadas, caracteristica que no tiene JavaScript
+por default.Es decir ancpsulan variables que no pueden ser modificadas directamente por otros ojetos, solo por funciones
+pertenecientes al mismo.
