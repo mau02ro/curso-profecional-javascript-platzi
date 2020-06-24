@@ -1,0 +1,35 @@
+---Cómo llega un script al navegador:
+
+El **DOM **es la representación que hace el navegador de un documento HTML.
+
+El navegador interpreta el archivo HTML y cuando termina de transformarlo al DOM se dispara el evento
+DOMContentLoaded lo que significa que todo el documento está disponible para ser manipulado.
+
+Todo script que carguemos en nuestra página tiene un llamado y una ejecución.
+
+Tanto con async como defer podemos hacer llamados asíncronos pero tiene sus diferencias:
+
+async. Con async podemos hacer la petición de forma asíncrona y no vamos a detener la carga del
+DOM hasta que se haga la ejecución del código.defer. La petición es igual asíncrona como en el async
+pero va a deferir la ejecución del Javascript hasta el final de que se cargue todo el documento.
+Hay que tener en cuenta que cuando carga una página y se encuentra un script a ejecutar toda la carga
+se detiene. Por eso se recomienda agregar tus scripts justo antes de cerrar el body para que todo el
+documento esté disponible.
+
+
+---Scope
+
+El scope o ámbito es lo que define el tiempo de vida de una variable, en que partes de nuestro codigo
+pueden ser usadas.
+
+Global scope:Variables disponibles de forma global se usa la palabra var, son accesibles por todos
+los scripts que se cargan en la pagina.Aqui hay ucho riesgo de sobreescritura.
+
+Function scope:variables declaradas dentro de una funcion solo visible dentro de ella misma (incluyendo
+los agumentos de la funcion).
+
+Block scope:varibles definidas dentro de un bloque, por ejemplo varibles declaradas dentro un loop while
+o for.se utiliza let y const para declarar este tipo de variables.
+
+Module Scope: cuando se denota un script de un tipo module con el atributo type='mosule' las variables son
+limitadas al archivo en el que estan declaradas.
