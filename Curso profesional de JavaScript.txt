@@ -94,3 +94,54 @@ chain hasta encontrar o regresar undefined.
 
 La funcion hasOwnProperty sirve para verificar si una propiedad es parte del objeto o si viene heredada desde su
 prototype sy prototype chain.
+
+
+---Parsers y el Abstract Syntax Tree
+
+https://esprima.org/
+https://esprima.org/
+
+El JS Engine recibe el código fuente y lo procesa de la siguiente manera:
+
+El parser descompone y crea tokens que integran el AST.
+Se compila a bytecode y se ejecuta.
+Lo que se pueda se optimiza a machine code y se reemplaza el código base.
+Un SyntaxError es lanzado cuando el motor JavaScript encuentra partes que no forman parte de la sintaxis del lenguaje y esto lo logra gracias a que se tiene un AST generado por el parser.
+
+El parser es del 15% al 20% del proceso de ejecución por lo que hay que usar parser del código justo en el momento que lo necesitamos y no antes de saber si se va a usar o no.
+
+RESUMEN:
+
+QUE HACE UN PARSER?
+
+Lee el codigo fuente y lo descompone en tokens, luego se crea el Abstract Syntax Tree.
+Si en este proceso de crear AST ocurre una falla se va a producir un :
+Syntax Error: es lanzado cuando el motor de Javascript se encuentra con partes de codigo que no forman parte de la sintaxis del lenguaje
+al momento de analizar el codigo
+
+El proceso de parsing es importante que se haga bien. Google dice que el Parsig es el 15-20% de ejecucion
+La mayoria del Javascript en una pagina nunca se ejecuta
+Esto hace que bundling y code splitting sea muy importante!
+
+Parser de V8(Motor de google chrome)
+Eager Parsing:
+Encuentra errores de sintaxis
+Crea el AST
+Construye los scopes
+
+Lazy Parsing:
+Doble de rapido que el eager parser
+NO creal el AST
+Construye parcialmente los scopes
+
+AST
+
+Es una estructura en forma de arbol. Es un grafo(estructure de datos) que representa un programa
+
+Se usa en :
+Javascript Engine
+Bundlers: WebPack, Rollup, Parcel
+Transpilers = Babel
+Linters: ESlint, Prettify
+Syntax Highlighters
+Type Checkers: Typescript, Flow
