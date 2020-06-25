@@ -134,7 +134,7 @@ Se usa en :
 
 [Regla para eslint](https://astexplorer.net/#/gist/5d46bc0e7e5221a270bbcaf94ca6e71c/0862a9e309eeb454da35eba7b718f5433a801ad6)
 
-##Cómo funciona el JavaScript Engine
+## Cómo funciona el JavaScript Engine
 
 Una vez tenemos el AST ahora hay que convertirlo a Bytecode.
 
@@ -155,7 +155,7 @@ Cada navegador tiene su implementación de JavaScript Engine:
 - JavaScriptCore - Safari
 - V8 - Chrome
 
-##Event Loop
+## Event Loop
 
 El Event Loop hace que Javascript parezca ser multihilo a pesar de que corre en un solo proceso.
 
