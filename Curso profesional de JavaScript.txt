@@ -71,3 +71,13 @@ que recibe la funcion que llamo call.
 argumentos que recibe la funcion que llamo a apply.
 *functionName.bind().Recibe como primer y unico argumento el this.No ejecuta la funcion, solo regresa otra
 funcioncon el nuevo this integrado.
+
+---Prototype
+
+En JavaScript todo son objetos, no tenemos clases, no tenemos esa plano para crear objetos.
+
+Todos los objetos 'heredan' de un prototype que a su vez hereda de otro prototype y asi sucesivamente creando
+lo que se llama la prototype chain.
+
+La keyword new crea un nuevo objeto que hereda todas las propiedades del prototipo de otro objeto.No confundir
+prototype con proto que es sólo una propiedad en cada instancia que apunta al prototipo del que hereda.
