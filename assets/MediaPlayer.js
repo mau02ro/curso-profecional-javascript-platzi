@@ -20,8 +20,20 @@ MediaPlayer.prototype.unmute = function () {
 };
 
 MediaPlayer.prototype._initPlugins = function () {
+  const player = {
+    play: () => this.play(),
+    stop: () => this.stop(),
+    media: this.media,
+    get muted() {
+      return this.media.muted;
+    },
+    set muted(val) {
+      this.media.muted = val;
+    },
+  };
+
   this.plugins.forEach((plugin) => {
-    plugin.run(this);
+    plugin.run(player);
   });
 };
 

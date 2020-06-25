@@ -7,9 +7,7 @@ const onOffSond = document.querySelector("#on-of-sond");
 
 const player = new MediaPlayer({
   el: video,
-  plugins: [
-    /*new AutoPlay()*/
-  ],
+  plugins: [new AutoPlay()],
 });
 
 playPause.onclick = () => (player.media.paused ? player.play() : player.stop());
