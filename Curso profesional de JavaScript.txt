@@ -1,4 +1,4 @@
----Cómo llega un script al navegador:
+﻿---Cómo llega un script al navegador:
 
 El **DOM **es la representación que hace el navegador de un documento HTML.
 
@@ -9,8 +9,9 @@ Todo script que carguemos en nuestra página tiene un llamado y una ejecución.
 
 Tanto con async como defer podemos hacer llamados asíncronos pero tiene sus diferencias:
 
-async. Con async podemos hacer la petición de forma asíncrona y no vamos a detener la carga del
-DOM hasta que se haga la ejecución del código.defer. La petición es igual asíncrona como en el async
+*async. Con async podemos hacer la petición de forma asíncrona y no vamos a detener la carga del
+DOM hasta que se haga la ejecución del código.
+*defer. La petición es igual asíncrona como en el async
 pero va a deferir la ejecución del Javascript hasta el final de que se cargue todo el documento.
 Hay que tener en cuenta que cuando carga una página y se encuentra un script a ejecutar toda la carga
 se detiene. Por eso se recomienda agregar tus scripts justo antes de cerrar el body para que todo el
@@ -81,3 +82,15 @@ lo que se llama la prototype chain.
 
 La keyword new crea un nuevo objeto que hereda todas las propiedades del prototipo de otro objeto.No confundir
 prototype con proto que es sólo una propiedad en cada instancia que apunta al prototipo del que hereda.
+
+
+---Herencia Prototipal
+
+Por default los objetos en JavaScript tienen como prototipo a Object que es ek punto de partida de todos los
+objetos, es el prototipo padre.Object es la raiz de todo por lo tanto tiene un protitipo padre undefined.
+
+Cuando se llama a una funcion o variable que no se encuentra en el mismo objeto que la llama, se busca en toda la prototype
+chain hasta encontrar o regresar undefined.
+
+La funcion hasOwnProperty sirve para verificar si una propiedad es parte del objeto o si viene heredada desde su
+prototype sy prototype chain.
