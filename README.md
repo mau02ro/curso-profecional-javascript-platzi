@@ -214,3 +214,9 @@ Algunas de sus características:
 La peticiones AJAX permitieron en su tiempo hacer peticiones asíncronas al servidor sin tener que detener la carga de la página. Hoy en día se utiliza la función fetch para esto.
 
 Con fetch tenemos algo llamado AbortController que nos permite enviar una señal a una petición en plena ejecución para detenerla.
+
+## IntersectionObserver
+
+Sirve para observar elementos y si cruzan un umbral que nosotros definimos nos lo va a notificar para tomar acción.
+
+El umbral se define por el porcentaje que tiene intersección con el viewport, con la parte visible de nuestra página.
