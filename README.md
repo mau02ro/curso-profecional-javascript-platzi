@@ -208,3 +208,9 @@ Algunas de sus características:
 - Empiezan suspendidos y se tiene que llamar next para que ejecuten.
 - Regresan un value y un boolean done que define si ya terminaron.
 - yield es la instrucción que regresa un valor cada vez que llamamos a next y detiene la ejecución del generador.
+
+## Fetch - Cómo cancelar peticiones
+
+La peticiones AJAX permitieron en su tiempo hacer peticiones asíncronas al servidor sin tener que detener la carga de la página. Hoy en día se utiliza la función fetch para esto.
+
+Con fetch tenemos algo llamado AbortController que nos permite enviar una señal a una petición en plena ejecución para detenerla.
