@@ -192,3 +192,19 @@ La clase Promise tiene algunos métodos estáticos bastantes útiles:
 Los getters y setters son funciones que podemos usar en un objeto para tener propiedades virtuales. Se usan los keywords set y get para crear estas propiedades.
 
 Estas propiedades al ser funciones pueden llevar una validación de por medio y ser usadas con el operador de asignación como si fueran una variable más dentro del objeto.
+
+## Proxy
+
+El proxy sirve para interceptar la lectura de propiedades de un objeto (los get, y set) entre muchas otras funciones. Así, antes de que la llamada llegue al objeto podemos manipularla con una lógica que nosotros definamos.
+
+## Generators
+
+Los generadores son funciones especiales, pueden pausar su ejecución y luego volver al punto donde se quedaron recordando su scope.
+
+Algunas de sus características:
+
+#### Los generadores regresan una función.
+
+- Empiezan suspendidos y se tiene que llamar next para que ejecuten.
+- Regresan un value y un boolean done que define si ya terminaron.
+- yield es la instrucción que regresa un valor cada vez que llamamos a next y detiene la ejecución del generador.
