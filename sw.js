@@ -1,22 +1,46 @@
-//self es el this de los service worker
-
+const VERSION = "v1";
 self.addEventListener("install", (event) => {
-  //crear pre-cache
-  event.waitUntil(precache()); //espera a que se resuelva la prmesa
+  event.waitUntil(precache());
+});
+
+self.addEventListener("fetch", (event) => {
+  const request = event.request;
+  //get
+  if (request.method !== "GET") {
+    return;
+  }
+
+  //buscar en cache
+  event.respondWith(cachedResponse(request));
+
+  //actualizar el cache
+  event.waitUntil(updateCache(request));
 });
 
 async function precache() {
-  //caches.open("nombre"); regresa una promesa
-  const cache = await caches.open("v1");
-
-  return cache.addAll([
+  const cache = await caches.open(VERSION);
+  const data_precache = [
     "/",
     "/index.html",
     "/assets/index.js",
     "/assets/MediaPlayer.js",
-    "/assets/BigBuckBunny.js",
-    "/assets/styles.js",
     "/assets/plugins/AutoPlay.js",
     "/assets/plugins/AutoPause.js",
-  ]);
+    "/assets/styles.css",
+    "/assets/BigBuckBunny.mp4",
+  ];
+
+  return cache.addAll(data_precache);
+}
+
+async function cachedResponse(request) {
+  const cache = await caches.open(VERSION);
+  const response = await cache.match(request);
+  return response || fetch(request);
+}
+
+async function updateCache(request) {
+  const cache = await caches.open(VERSION);
+  const response = await fetch(request);
+  return cache.put(request, response);
 }
