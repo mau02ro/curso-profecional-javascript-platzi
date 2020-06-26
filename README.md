@@ -220,3 +220,7 @@ Con fetch tenemos algo llamado AbortController que nos permite enviar una señal
 Sirve para observar elementos y si cruzan un umbral que nosotros definimos nos lo va a notificar para tomar acción.
 
 El umbral se define por el porcentaje que tiene intersección con el viewport, con la parte visible de nuestra página.
+
+## VisibilityChange
+
+El visibilityChange forma parte del API del DOM llamado Page Visibility y nos deja saber si el elemento es visible, pude ser usado para ejecutar una acción cuando cambiamos de pestaña. Así podemos ahorrar batería y mejorar la UX.
