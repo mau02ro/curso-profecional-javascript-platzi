@@ -243,6 +243,16 @@ Los navegadores no entienden TypeScript así que lo vamos a transpilar a JavaScr
 
 Son solucones generales ya probadas dentro de un contexto que las limita a problemas drecuentes que nos encontramos en el desarrollo de software.
 
+Estructura
+
+Nombre de la clase.
+Propeidades.
+Metodos
+
+(-):indica que el metodo/propiedad es privado.
+(+):indica que el metodo/propiedad es publico.
+(subrayado): indica que es estatico.
+
 ### Categorias de patrones de diseño
 
 #### Creacionales
@@ -255,7 +265,7 @@ Proveen diferentes mecanismos para la creación de objetos.
   separa la creación de un objeto complejo de su estructura, de tal forma que el mismo proceso de construcción puede servir para crear representaciones diderentes.
 - Factory Method
 - Prototype
-- Singleton
+- Singleton: Es un patron de creacion el en el cual solo va a existir una _solo_ instancia del objeto.
 
 #### Estructurales
 
