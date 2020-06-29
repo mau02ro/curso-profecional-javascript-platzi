@@ -1,10 +1,10 @@
-import MediaPlayer from "./MediaPlayer.js";
-import AutoPlay from "./plugins/AutoPlay.js";
-import AutoPause from "./plugins/AutoPause.js";
+import MediaPlayer from "./MediaPlayer";
+import AutoPlay from "./plugins/AutoPlay";
+import AutoPause from "./plugins/AutoPause";
 
 const video = document.querySelector("video");
-const playPause = document.querySelector("#play-pause");
-const onOffSond = document.querySelector("#on-of-sond");
+const playPause: HTMLMediaElement = document.querySelector("#play-pause");
+const onOffSond: HTMLMediaElement = document.querySelector("#on-of-sond");
 
 const player = new MediaPlayer({
   el: video,
