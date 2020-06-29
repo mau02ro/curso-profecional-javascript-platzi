@@ -2,7 +2,7 @@
   "name": "@mau02ro/mediaplayer",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "lib/MediaPlayer.js",
   "scripts": {
     "build": "tsc src/MediaPlayer.ts src/plugins/AutoPause.ts src/plugins/AutoPlay.ts src/plugins/Ads/Ads.ts src/plugins/Ads/index.ts --outDir lib",
     "test": "echo \"Error: no test specified\" && exit 1"
