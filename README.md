@@ -238,3 +238,49 @@ Parecido a como lo hacen los proxys van a interceptar peticiones para guardar el
 TypeScript es un superset de JavaScript que añade tipos a nuestras variables ayudando así a la detección de errores de forma temprana y mejorando el autocompletado.
 
 Los navegadores no entienden TypeScript así que lo vamos a transpilar a JavaScript usando Parcel.
+
+## Patrones de Diseño
+
+Son solucones generales ya probadas dentro de un contexto que las limita a problemas drecuentes que nos encontramos en el desarrollo de software.
+
+### Categorias de patrones de diseño
+
+#### Creacionales
+
+Proveen diferentes mecanismos para la creación de objetos.
+
+- Abstract Factory
+- Builder(Constructor):
+  Es usado para prmitir la creacion de una variedad de objetos complejos desde un objeto fuente.
+  separa la creación de un objeto complejo de su estructura, de tal forma que el mismo proceso de construcción puede servir para crear representaciones diderentes.
+- Factory Method
+- Prototype
+- Singleton
+
+#### Estructurales
+
+Describen formas de componer objetos para formar nuevas estructuras flexibles y eficientes.
+
+- Adapter: Crea una interfas sencilla y creo una compleja para su funcionamiento la cual no es visible.
+- Bridge
+- Composite
+- Decorator
+- Facade
+- Flyweight
+- Proxy
+
+#### De Comportamiento
+
+Gestiona algoritmos y responsabilidades ente objetos.
+
+- Chain of Responsibility
+- Command
+- Interprete
+- Iterator
+- Mediator
+- Memento
+- Observer
+- State
+- strategy
+- Template Method
+- Visitor
