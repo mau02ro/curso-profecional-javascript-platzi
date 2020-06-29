@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //Un objeto comun y corriente
+      // const zelda = {
+      //   name: "Zelda",
+      // };
+      /*zelda.saludar = function () {
+        console.log(`Hola soy ${this.name}`);
+      };
+      zelda.saludar();*/
+      //Otro objeto mas
+      // const link = {
+      //   name: "Link",
+      // };
+      /*link.saludar = function () {
+        console.log(`Hola soy ${this.name}`);
+      };
+      link.saludar();*/
+      //Seamos un poco mas  eficientes
+      /*function Hero(name) {
+        const hero = {
+          name: name,
+        };
+
+        hero.saludar = function () {
+          console.log(`Hola bro ${this.name}`);
+        };
+
+        return hero;
+      }
+
+      const zelda = Hero("Zelda");
+      const link = Hero("Link");
+      zelda.saludar();
+      link.saludar();*/
+      //Aun podemos mejorar mas y evitar tener que crear las mismas funcion cada vez
+
+      // const heroMethods = {
+      //   saludar: function () {
+      //     console.log(`Hola bro ${this.name}`);
+      //   },
+      // };
+
+      // function Hero(name) {
+      //   const hero = {
+      //     name: name,
+      //   };
+
+      //   hero.saludar = heroMethods.saludar;
+
+      //   return hero;
+      // }
+
+      // const zelda = Hero("Zelda");
+      // const link = Hero("Link");
+      // zelda.saludar();
+      // link.saludar();
+
+      //object.create
+      // const heroMethods = {
+      //   saludar: function () {
+      //     console.log(`Hola bro 2 ${this.name}`);
+      //   },
+      // };
+
+      // function Hero(name) {
+      //   const hero = Object.create(heroMethods);
+      //   hero.name = name;
+      //   return hero;
+      // }
+
+      // const zelda = Hero("Zelda");
+      // const link = Hero("Link");
+      // zelda.saludar();
+      // link.saludar();
+
+      //los metodos de hero dentro de hero
+
+      // function Hero(name) {
+      //   const hero = Object.create(Hero.prototype);
+      //   hero.name = name;
+      //   return hero;
+      // }
+
+      // Hero.prototype.saludar = function () {
+      //   console.log(`Hola  ${this.name}`);
+      // };
+
+      // const zelda = Hero("Zelda");
+      // const link = Hero("Link");
+      // zelda.saludar();
+      // link.saludar();
+
+      //new
+
+      // function Hero(name) {
+      //   this.name = name;
+      //   // return this;
+      // }
+
+      // Hero.prototype.saludar = function () {
+      //   console.log(`Hola  ${this.name}`);
+      // };
+
+      // const zelda = new Hero("Zelda");
+      // const link = new Hero("Link");
+      // zelda.saludar();
+      // link.saludar();
+
+      //HERENCIA PROTOTIPAL
+
+      //___________________________________________________________
+      //Para hacer referencia al proto usamos Object.getPrototypeOf(zelda)
+      //___________________________________________________________
+
+      function Hero(name) {
+        this.name = name;
+      }
+
+      Hero.prototype.saludar = function () {
+        console.log(`Hola  ${this.name}`);
+      };
+      const zelda = new Hero("Zelda");
+
+      //propiedades de la instancia
+      // console.log(zelda);
+      // console.log(`Name: ${zelda.name}`);
+
+      //propiedades de la 'clase'
+      // console.log(`Saludar: ${zelda.saludar}`);
+
+      //propiedades heredadas ej: toString
+      // console.log(`toString: ${zelda.toString}`);
+
+      //hasOwnProperty (de donde sale toString o esto?)
+      // console.log(
+      //   `zelda.hasOwnProperty('name'): ${zelda.hasOwnProperty("name")}`
+      // );
+      // console.log(
+      //   `zelda.hasOwnProperty('saludar'): ${zelda.hasOwnProperty("saludar")}`
+      // );
+
+      //inspeccionemos el prototipo del zelda
+
+      //inspeccionemos el prototipo del hero
+
+      //inspeccionemos el prototipo del objeto
+
+      // Definimos el constructor Persona
+      function Persona(primerNombre) {
+        this.primerNombre = primerNombre;
+      }
+      // Agregamos un par de métodos a Persona.prototype
+      Persona.prototype.caminar = function () {
+        alert("Estoy caminando!");
+      };
+      Persona.prototype.diHola = function () {
+        alert("Hola, Soy" + this.primerNombre);
+      };
+      // Definimos el constructor Estudiante
+      function Estudiante(primerNombre, asignatura) {
+        // Llamamos al constructor padre, nos aseguramos (utilizando Function#call) que "this" se
+        // ha establecido correctamente durante la llamada
+        Persona.call(this, primerNombre);
+        //Inicializamos las propiedades específicas de Estudiante
+        this.asignatura = asignatura;
+      }
+      Estudiante.prototype = Object.create(Persona.prototype); // Vea las siguientes notas
+
+      // Establecer la propiedad "constructor" para referencias a Estudiante
+      Estudiante.prototype.constructor = Estudiante;
+
+      // Reemplazar el método "diHola"
+      Estudiante.prototype.diHola = function () {
+        alert(
+          "Hola, Soy " +
+            this.primerNombre +
+            ". Estoy estudiando " +
+            this.asignatura +
+            "."
+        );
+      };
+
+      // Agregamos el método "diAdios"
+      Estudiante.prototype.diAdios = function () {
+        alert("¡ Adios !");
+      };
+
+      const mauro = new Estudiante("Mauro", "Ingles");
+      console.log(mauro);
+    </script>
+  </body>
+</html>

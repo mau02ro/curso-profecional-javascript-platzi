@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //Closures
+
+      //printColor dentro de un iife
+      //IIFE
+      (function () {
+        //scope
+        let color = "green";
+        //funcion definida dentro del scope
+        function printColor() {
+          console.log(color);
+        }
+
+        printColor();
+      })();
+
+      //funcions que regresan funciones
+      function makeColorPrinter(color) {
+        var colorMessage = `This color es: ${color}`;
+        return function () {
+          console.log(colorMessage);
+        };
+      }
+
+      let greenColorPrinter = makeColorPrinter("red");
+      greenColorPrinter();
+
+      //variables 'privadas'_____
+      // const counter = {
+      //   count: 3,
+      // };
+      // console.log(counter.count);
+      function makeCounter(n) {
+        let count = n;
+
+        return {
+          increase: function () {
+            count += 1;
+          },
+          decrease: function () {
+            count -= 1;
+          },
+          getCount: function () {
+            return count;
+          },
+        };
+      }
+
+      let counter = makeCounter(7);
+    </script>
+  </body>
+</html>

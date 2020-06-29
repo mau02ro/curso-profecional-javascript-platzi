@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul>
+      <li><button class="call-to-action">Click</button></li>
+      <li><button class="call-to-action">CLick</button></li>
+      <li><button class="call-to-action">Click</button></li>
+    </ul>
+    <script>
+      function saludar() {
+        console.log(`Hola soy ${this.nombre} ${this.apellido}`);
+      }
+      function correr(metros, direccion) {
+        console.log(`${this.nombre} corre ${metros} hacia el ${direccion}`);
+      }
+      //Establecer this usando call
+      const maria = {
+        nombre: "Maria",
+        apellido: "Perez",
+      };
+
+      saludar.call(maria);
+
+      //Establecer this usando call pasan do parametros
+      correr.call(maria, 400, "norte");
+
+      //Establecer this usando apply
+      const juan = {
+        nombre: "Juan",
+        apellido: "Martinez",
+      };
+
+      saludar.call(juan);
+
+      //Establecer this usando apply pasan do parametros
+      let valores = [400, "norte"];
+      /*correr.apply(juan, [400, "norte"]);*/
+      correr.apply(juan, valores);
+
+      //Establecer this usando bind
+      const pedro = {
+        nombre: "Pedro",
+        apellido: "Abrante",
+      };
+
+      const saludarPedro = saludar.bind(pedro);
+      saludarPedro();
+
+      //Establecer this usando bind pasan do parametros
+      /*const correrPedro = correr.bind(pedro);
+      correrPedro(400, "norte");*/
+      const correrPedro = correr.bind(pedro, 400, "norte");
+      correrPedro();
+
+      //Caso de uso
+      const buttons = document.getElementsByClassName("call-to-action");
+      /*buttons.forEach((element) => {
+        element.onclick(() => alert("Nunca pares de aprender"));
+      });*/
+
+      Array.prototype.forEach.call(buttons, (element) => {
+        element.onclick = () => alert("Nunca pares de aprender");
+      });
+    </script>
+  </body>
+</html>
