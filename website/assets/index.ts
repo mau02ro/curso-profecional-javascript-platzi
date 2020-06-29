@@ -1,7 +1,7 @@
-import MediaPlayer from "./MediaPlayer";
-import AutoPlay from "./plugins/AutoPlay";
-import AutoPause from "./plugins/AutoPause";
-import AdsPlugin from "./plugins/Ads/index";
+import MediaPlayer from "@mau02ro/mediaplayer/lib/MediaPlayer.js";
+import AutoPlay from "@mau02ro/mediaplayer/lib/plugins/AutoPlay.js";
+import AutoPause from "@mau02ro/mediaplayer/lib/plugins/AutoPause.js";
+import AdsPlugin from "@mau02ro/mediaplayer/lib/plugins/Ads/index.js";
 
 const video = document.querySelector("video");
 const playPause: HTMLMediaElement = document.querySelector("#play-pause");

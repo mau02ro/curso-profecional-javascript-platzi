@@ -2,9 +2,10 @@
   "name": "website",
   "version": "1.0.0",
   "description": "",
-  "main": "sw.js",
+  "main": "assets/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc assets/index.ts",
+    "start": "parcel index.html ejercicios/index.html /ejercicios/**/*.html"
   },
   "keywords": [],
   "author": "Mauro Hernández <mauroDeveloper@hotmail.com>",
@@ -12,5 +13,12 @@
   "dependencies": {
     "@mau02ro/mediaplayer": "^1.0.0",
     "live-server": "^1.2.1"
-  }
+  },
+  "devDependencies": {
+    "parcel": "^1.12.4",
+    "typescript": "^3.9.5"
+  },
+  "browserslist": [
+    "last 1 Chrome version"
+  ]
 }
